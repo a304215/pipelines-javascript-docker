@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: apipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: apipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: apipelinesjavascriptdocker 
+          image: gptxacr.azurecr.io/apipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
